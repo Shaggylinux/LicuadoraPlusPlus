@@ -1,0 +1,3 @@
+C:/Users/shaggy/Desktop/licuadora/build/CMakeFiles/MiProyecto.dir
+C:/Users/shaggy/Desktop/licuadora/build/CMakeFiles/edit_cache.dir
+C:/Users/shaggy/Desktop/licuadora/build/CMakeFiles/rebuild_cache.dir
