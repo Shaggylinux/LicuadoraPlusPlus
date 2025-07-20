@@ -48,5 +48,5 @@ int main(){
     for(int i{0} ; i < licuadoras.size() ; i++) {
         licuadoras[i].SetModel("alv : ");
     }
-    for(int i{0} ; i < licuadoras.size() ; i++) std::cout << licuadoras[i].GetName() << "\n";
+    for(auto licuadora : licuadoras) std::cout << licuadora.GetName() << "\n";
 }
