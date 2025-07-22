@@ -7,8 +7,14 @@ class VoidBlender{
         std::string model;
         int modelnumber;
         int velocity;
+        bool onoff = false;
     public:
         VoidBlender() = default;
+        
+        // ----- Setters -----
+        void SetOnOff(bool _onoff){
+            onoff = _onoff;
+        }
         
         void SetVelocity(int _velocity) {
             velocity = _velocity;
@@ -24,6 +30,11 @@ class VoidBlender{
 
         void SetModelNumber(std::string _ModelNumber){
             name = _ModelNumber;
+        }
+        
+        // ----- Getters -----
+        bool GetOnOff(){
+            return onoff;
         }
 
         int GetVelocity(){
@@ -41,7 +52,8 @@ class VoidBlender{
         int GetModelNumber(){
             return modelnumber;
         }
-
+        
+        // ----- Funcion principal -----
         void Mostrarinfo(){
             std::cout << "Name : " << name;
             std::cout << "Model : " << model;
@@ -64,5 +76,4 @@ int main(){
     std::cout << "##########\n";
 
     std::cout << "Models for Blenders, Chooise an option : ";
-
 }
