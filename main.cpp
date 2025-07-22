@@ -62,7 +62,7 @@ class VoidBlender{
 };
 
 int main(){
-    int n;
+    int n{0}, o{0};
     VoidBlender a, b, c, d, e, f;
     std::vector<VoidBlender> licuadoras {a, b, c, d, e, f};
     std::vector<std::string> namesblenders {"Oster", "Bosch", "Imaco", "Philips", "Thomas"};
@@ -74,6 +74,17 @@ int main(){
         std::cout << n << ". " << licuadoras[i].GetName() << "\n";
     }
     std::cout << "##########\n";
-
     std::cout << "Models for Blenders, Chooise an option : ";
+    std::cin >> o;
+
+    switch (o)
+    {
+    case 1:
+        std::cout << "Vamos";
+        break;
+    
+    default:
+        std::cout << "No vamos";
+        break;
+    }
 }
