@@ -1,15 +1,19 @@
 #include <iostream>
 #include <vector>
-#include <string>
 
 class VoidBlender{
     private:
         std::string name;
         std::string model;
         int modelnumber;
+        int velocity;
     public:
         VoidBlender() = default;
         
+        void SetVelocity(int _velocity) {
+            velocity = _velocity;
+        }
+
         void SetName(std::string _name){
             name = _name;
         }
@@ -20,6 +24,10 @@ class VoidBlender{
 
         void SetModelNumber(std::string _ModelNumber){
             name = _ModelNumber;
+        }
+
+        int GetVelocity(){
+            return velocity;
         }
 
          std::string GetName(){
@@ -42,25 +50,19 @@ class VoidBlender{
 };
 
 int main(){
-    VoidBlender a, b;
-    std::vector<VoidBlender> licuadoras {a, b};
-    std::vector<std::string> namesblenders {"Oster", "Sams"};
     int n;
+    VoidBlender a, b, c, d, e, f;
+    std::vector<VoidBlender> licuadoras {a, b, c, d, e, f};
+    std::vector<std::string> namesblenders {"Oster", "Bosch", "Imaco", "Philips", "Thomas"};
+    
     std::cout << "##########\n";
-
-    for (int i{0} ; i < licuadoras.size() && namesblenders.size() ; i++){
+    for (int i{0} ; i < licuadoras.size() && i < namesblenders.size() ; i++){
         n += 1;
-        std::cout << n << ". " << namesblenders[i] << "\n";
+        licuadoras[i].SetName(namesblenders[i]);
+        std::cout << n << ". " << licuadoras[i].GetName() << "\n";
     }
     std::cout << "##########\n";
 
-    
-    /*
-        std::cout << "###########################################";
-        std::cout << " 1. Oster";
-        std::cout << " 2. NOSE";
-        std::cout << " 3. NOSE x2";
-        std::cout << " 4. NOSE x3";
-        std::cout << "###########################################";
-    */
+    std::cout << "Models for Blenders, Chooise an option : ";
+
 }
