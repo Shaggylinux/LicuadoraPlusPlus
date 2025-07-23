@@ -73,7 +73,6 @@ class VoidBlender{
 std::string VoidBlender::seleccion;
 
 int main(){
-    std::string seleccion;
     int n{0}, o{0};
     VoidBlender a, b, c, d, e;
     std::vector<VoidBlender> licuadoras {a, b, c, d, e};
@@ -91,20 +90,25 @@ int main(){
 
     switch (o){
         case 1:
-            VoidBlender::SetSeleccion("Oster");
+            VoidBlender::SetSeleccion("Oster.");
             break;
         case 2:
-            VoidBlender::SetSeleccion("Bosch");
+            VoidBlender::SetSeleccion("Bosch.");
             break;
         case 3:
-            VoidBlender::SetSeleccion("Imaco");
+            VoidBlender::SetSeleccion("Imaco.");
             break;
         case 4:
-            VoidBlender::SetSeleccion("Philips");
+            VoidBlender::SetSeleccion("Philips.");
             break;
         case 5:
-            VoidBlender::SetSeleccion("Thomas");
+            VoidBlender::SetSeleccion("Thomas.");
             break;
+        default:
+            std::cout << "Error : Selection is a void.\n";
     }
-    std::cout << "Seleccion : " << VoidBlender::GetSeleccion();
+    
+    if(VoidBlender::GetSeleccion().length() > 1){
+        std::cout << "Selettion : " << VoidBlender::GetSeleccion() << "\n";
+    }
 }
