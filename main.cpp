@@ -62,9 +62,10 @@ class VoidBlender{
 };
 
 int main(){
+    std::string seleccion;
     int n{0}, o{0};
     VoidBlender a, b, c, d, e, f;
-    std::vector<VoidBlender> licuadoras {a, b, c, d, e, f};
+    std::vector<VoidBlender> licuadoras {a, b, c, d, e};
     std::vector<std::string> namesblenders {"Oster", "Bosch", "Imaco", "Philips", "Thomas"};
     
     std::cout << "##########\n";
@@ -77,14 +78,22 @@ int main(){
     std::cout << "Models for Blenders, Chooise an option : ";
     std::cin >> o;
 
-    switch (o)
-    {
-    case 1:
-        std::cout << "Vamos";
-        break;
-    
-    default:
-        std::cout << "No vamos";
-        break;
+    switch (o){
+        case 1:
+            seleccion = "Oster";
+            break;
+        case 2:
+            seleccion = "Bosch";
+            break;
+        case 3:
+            seleccion = "Imaco";
+            break;
+        case 4:
+            seleccion = "Philips";
+            break;
+        case 5:
+            seleccion = "Thomas";
+            break;
     }
+    std::cout << "Seleccion : " << seleccion;
 }
