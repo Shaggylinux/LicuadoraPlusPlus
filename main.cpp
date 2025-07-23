@@ -8,12 +8,17 @@ class VoidBlender{
         int modelnumber;
         int velocity;
         bool onoff = false;
+        static std::string seleccion;
     public:
         VoidBlender() = default;
         
         // ----- Setters -----
         void SetOnOff(bool _onoff){
             onoff = _onoff;
+        }
+
+        static void SetSeleccion(std::string _seleccion){
+            seleccion = _seleccion;
         }
         
         void SetVelocity(int _velocity) {
@@ -33,6 +38,10 @@ class VoidBlender{
         }
         
         // ----- Getters -----
+        static std::string GetSeleccion(){
+            return seleccion;
+        }
+        
         bool GetOnOff(){
             return onoff;
         }
@@ -41,7 +50,7 @@ class VoidBlender{
             return velocity;
         }
 
-         std::string GetName(){
+        std::string GetName(){
             return name;
         }
 
@@ -61,10 +70,12 @@ class VoidBlender{
         }
 };
 
+std::string VoidBlender::seleccion;
+
 int main(){
     std::string seleccion;
     int n{0}, o{0};
-    VoidBlender a, b, c, d, e, f;
+    VoidBlender a, b, c, d, e;
     std::vector<VoidBlender> licuadoras {a, b, c, d, e};
     std::vector<std::string> namesblenders {"Oster", "Bosch", "Imaco", "Philips", "Thomas"};
     
@@ -80,20 +91,20 @@ int main(){
 
     switch (o){
         case 1:
-            seleccion = "Oster";
+            VoidBlender::SetSeleccion("Oster");
             break;
         case 2:
-            seleccion = "Bosch";
+            VoidBlender::SetSeleccion("Bosch");
             break;
         case 3:
-            seleccion = "Imaco";
+            VoidBlender::SetSeleccion("Imaco");
             break;
         case 4:
-            seleccion = "Philips";
+            VoidBlender::SetSeleccion("Philips");
             break;
         case 5:
-            seleccion = "Thomas";
+            VoidBlender::SetSeleccion("Thomas");
             break;
     }
-    std::cout << "Seleccion : " << seleccion;
+    std::cout << "Seleccion : " << VoidBlender::GetSeleccion();
 }
