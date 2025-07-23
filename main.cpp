@@ -13,14 +13,14 @@ class VoidBlender{
         VoidBlender() = default;
         
         // ----- Setters -----
-        void SetOnOff(bool _onoff){
-            onoff = _onoff;
-        }
-
         static void SetSeleccion(std::string _seleccion){
             seleccion = _seleccion;
         }
         
+        void SetOnOff(bool _onoff){
+            onoff = _onoff;
+        }
+
         void SetVelocity(int _velocity) {
             velocity = _velocity;
         }
@@ -72,7 +72,7 @@ class VoidBlender{
 
 std::string VoidBlender::seleccion;
 
-int main(){
+void seleccionarlicuadora(){
     int n{0}, o{0};
     VoidBlender a, b, c, d, e;
     std::vector<VoidBlender> licuadoras {a, b, c, d, e};
@@ -111,4 +111,40 @@ int main(){
     if(VoidBlender::GetSeleccion().length() > 1){
         std::cout << "Selettion : " << VoidBlender::GetSeleccion() << "\n";
     }
+}
+
+void Title(){
+    int o1{0};
+
+    std::cout << "#######################\n";
+    std::cout << "1. Seleccionar Licuadora.\n";
+    std::cout << "2. Encender/Apagar.\n";
+    std::cout << "3. Obtener solo nombre.\n";
+    std::cout << "4. Obtener solo modelo.\n";
+    std::cout << "5. Obtener solo numero de modelo.\n";
+    std::cout << "6. Obtener todos los valores anteriores.\n";
+    std::cout << "#######################\n";
+    std::cout << "Selecciona : ";
+    std::cin >> o1;
+
+    switch (o1) {
+        case 1:
+            seleccionarlicuadora();
+            break;
+        case 2:
+            if(!VoidBlender::GetSeleccion().empty()){
+            seleccionarlicuadora();
+            break;
+        } else {
+            std::cout << "Error seleccione primero una licuadora XD.\n";
+            Title();
+        }
+
+    default:
+        break;
+    }
+}
+
+int main(){
+    Title();
 }
