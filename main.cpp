@@ -72,6 +72,13 @@ class VoidBlender{
 
 std::string VoidBlender::seleccion;
 
+void seleccionarlicuadora();
+void Title();
+
+int main(){
+    Title();
+}
+
 void seleccionarlicuadora(){
     int n{0}, o{0};
     VoidBlender a, b, c, d, e;
@@ -143,8 +150,4 @@ void Title(){
     default:
         break;
     }
-}
-
-int main(){
-    Title();
 }
